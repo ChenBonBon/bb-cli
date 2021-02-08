@@ -1,0 +1,20 @@
+{
+	"presets": ["@babel/preset-env", "@babel/preset-react"],
+	"plugins": [
+		["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }],
+		["@babel/plugin-proposal-decorators", { "legacy": true }],
+		"@babel/plugin-proposal-class-properties",
+		"@babel/plugin-proposal-optional-chaining",
+		"@babel/plugin-proposal-function-bind",
+		"@babel/plugin-transform-async-to-generator",
+		"@babel/plugin-transform-runtime",
+		"dva-hmr",
+		"module-resolver",
+		"dynamic-import-node-sync"
+	],
+	"env": {
+		"production": {
+			"plugins": ["transform-remove-console"]
+		}
+	}
+}

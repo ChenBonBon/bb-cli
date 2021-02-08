@@ -1,0 +1,7 @@
+{
+	"start": "cross-env ESLINT=none webpack-dev-server --config=webpack.dev.conf.js",
+	"build": "cross-env ESLINT=none webpack --progress --config=webpack.prod.conf.js",
+	"dll": "cross-env ESLINT=none webpack --config=webpack.dll.conf.js",
+	"format": "prettier --no-editorconfig src/*.* src/{common,components,e2e,layouts,models,routes,services,utils}/**/*.* --write --ignore-unknown",
+	"test": "echo \"Error: no test specified\" && exit 1"
+}

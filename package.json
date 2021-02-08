@@ -1,0 +1,25 @@
+{
+	"name": "@chenbonbon/bb-cli",
+	"version": "1.0.1",
+	"description": "A cli util based on Webpack 4.x for Basebit.ai.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"bin": {
+		"bb-cli": "bin/cli.js"
+	},
+	"keywords": [
+		"Webpack",
+		"Cli",
+		"Basebit"
+	],
+	"author": "bonbon.chen@basebit.ai",
+	"license": "ISC",
+	"dependencies": {
+		"chalk": "^4.1.0",
+		"co": "^4.6.0",
+		"co-prompt": "^1.0.0",
+		"commander": "^7.0.0"
+	}
+}
