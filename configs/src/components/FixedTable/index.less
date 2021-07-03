@@ -1,0 +1,47 @@
+@import '../../../public/css/variable.less';
+@import '../../../public/css/yifang.less';
+
+.header {
+	margin-bottom: 20px;
+	height: 35px;
+	line-height: 35px;
+	:global {
+		@table-header: table-header;
+		.@{table-header}-datepicker {
+			width: 200px;
+			margin-right: 10px;
+		}
+		.@{table-header}-select {
+			width: 200px;
+			margin-right: 10px;
+		}
+		.ant-row + .ant-row {
+			margin-top: 20px;
+		}
+	}
+}
+.fixedTable {
+	:global {
+		.ant-table-body {
+			// 100vh - header - footer - contentPadding - fixedTableHeader - fixedTableThead - fixedTablePagination
+			height: calc(100vh - @header-height - @footer-height - 40px - 55px - 55px - 64px);
+		}
+		.ant-table-empty {
+			.ant-table-placeholder {
+				// 100vh - header - footer - contentPadding - fixedTableHeader - fixedTableThead
+				height: calc(100vh - @header-height - @footer-height - 40px - 55px - 55px);
+			}
+		}
+		.ant-table-cell {
+			.bbicon {
+				cursor: pointer;
+			}
+			.bbicon-chakan1 {
+				color: @primary-color;
+			}
+			.bbicon-tingzhi1 {
+				color: @pause-icon-color;
+			}
+		}
+	}
+}

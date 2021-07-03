@@ -1,0 +1,72 @@
+@import '../../public/css/variable.less';
+@import '../../public/css/yifang.less';
+
+.bodyLayout {
+	min-height: ~'calc(100vh - 24px)';
+	height: ~'calc(100vh - 24px)';
+}
+
+.logoContainer {
+	height: 88px;
+	line-height: 88px;
+	text-align: center;
+}
+
+.logo {
+	height: 88px;
+	line-height: 58px;
+	margin-right: 8px;
+	vertical-align: top;
+	padding: 0 0 0 50px;
+	cursor: pointer;
+	font-size: 20px;
+	img {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	position: absolute;
+	display: block;
+	z-index: 99;
+}
+
+.logobg {
+	height: 131px;
+	width: 256px;
+	position: absolute;
+	background: #fff;
+	z-index: 1;
+}
+
+.logbgCollapsed {
+	height: 131px;
+	width: 80px;
+	position: absolute;
+	background: #fff;
+	z-index: 1;
+}
+
+.basicLayout {
+	.rightLayout {
+		border-left: 1px solid #ebebeb;
+		background: #fff;
+	}
+}
+
+.logoTransparent {
+	width: 200px;
+	height: 88px;
+	background: transparent;
+}
+
+.mainContent {
+	height: calc(100vh - @header-height - @footer-height);
+	overflow-y: auto;
+	padding: 20px 30px;
+}
+
+.container {
+	background: #fafafa !important;
+	.header {
+		background: transparent;
+	}
+}

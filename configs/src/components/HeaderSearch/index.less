@@ -1,0 +1,45 @@
+@import '~antd/lib/style/themes/default.less';
+
+.headerSearch {
+	display: inline-block;
+	background: #ededed;
+	border-radius: 2px;
+	line-height: 36px;
+	width: 380px;
+	height: 35px;
+	:global(.anticon-search) {
+		cursor: pointer;
+		font-size: 16px;
+	}
+	.searchIcon {
+		font-size: 14px;
+		vertical-align: middle;
+		color: rgba(136, 136, 136, 0.3);
+	}
+	.input {
+		transition: width 0.3s, margin-left 0.3s;
+		width: 336px;
+		margin-left: 8px;
+		background: transparent;
+		border-radius: 0;
+		:global(.ant-select-selection) {
+			background: transparent;
+		}
+		input {
+			color: #161616;
+			border: 0;
+			padding-left: 0;
+			padding-right: 0;
+			box-shadow: none !important;
+		}
+	}
+}
+
+@media only screen and (max-width: @screen-md) {
+	.headerSearch {
+		width: 244px;
+		.input {
+			width: 200px;
+		}
+	}
+}

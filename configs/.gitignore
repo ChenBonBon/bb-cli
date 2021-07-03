@@ -1,22 +1,15 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+.cache/
+coverage/
+dist/*
+!dist/index.html
+node_modules/
+*.log
 
-# dependencies
-/node_modules
-# roadhog-api-doc ignore
-/src/utils/request-temp.js
-_roadhog-api-doc
-
-# production
-/dist
-
-# misc
+# OS generated files
 .DS_Store
-npm-debug.log*
-yarn-error.log
-
-/coverage
-.idea
-yarn.lock
-package-lock.json
-*bak
-jsconfig.json
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'pmzdfont';
+    font-display: swap;
+    src: url('/fonts/pmzd/webfont.eot'); /* IE9 */
+    src: url('/fonts/pmzd/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/fonts/pmzd/webfont.woff2') format('woff2'),
+    url('/fonts/pmzd/webfont.woff') format('woff'), /* chrome、firefox */
+    url('/fonts/pmzd/webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('/fonts/pmzd/webfont.svg#webfont') format('svg'); /* iOS 4.1- */
+}
+
+.pmzdfont {
+    font-family: "pmzdfont" !important;
+    font-size: 24px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

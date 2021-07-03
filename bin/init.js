@@ -1,11 +1,9 @@
 const fs = require('fs');
-const path = require('path');
 const chalk = require('chalk');
 const scripts = require('../configs/scripts.json');
 const dependencies = require('../configs/dependencies.json');
 const devDependencies = require('../configs/devDependencies.json');
-const engines = require('../configs/engines.json');
-const browserslist = require('../configs/browserslist.json');
+const child_process = require('child_process');
 
 const init = function (options) {
 	const { name } = options;
@@ -14,7 +12,6 @@ const init = function (options) {
 		process.stdin.pause();
 	} else {
 		fs.mkdirSync(name);
-		console.log('Project folder created.');
 		process.chdir(name);
 		writeConfigs(options);
 		process.stdin.pause();
@@ -26,26 +23,26 @@ const writePackageJson = function (options) {
 		scripts,
 		dependencies,
 		devDependencies,
-		engines,
-		browserslist,
 	});
 	fs.writeFileSync('package.json', JSON.stringify(packageJson, null, '\t'));
 };
 
-const writeIndex = function () {
-	fs.writeFileSync('index.js', '');
-};
-
 const writeConfigs = function (options) {
-	const configs = fs.readdirSync(path.resolve(__dirname, '../configs'));
+	const { name } = options;
 	writePackageJson(options);
-	writeIndex();
-	configs.forEach((file) => {
-		const extname = path.extname(file);
-		if (extname !== '.json') {
-			fs.createReadStream(path.resolve(__dirname, '../configs', file)).pipe(fs.createWriteStream(file));
-		}
-	});
+
+	child_process.spawnSync('cp', ['-r', '../configs/src', 'src']);
+	child_process.spawnSync('cp', ['-r', '../configs/public', 'public']);
+	child_process.spawnSync('cp', ['../configs/.babelrc', '.babelrc']);
+	child_process.spawnSync('cp', ['../configs/.gitignore', '.gitignore']);
+	child_process.spawnSync('cp', ['../configs/.prettierignore', '.prettierignore']);
+	child_process.spawnSync('cp', ['../configs/.prettierrc', '.prettierrc']);
+	child_process.spawnSync('cp', ['../configs/webpack.config.js', 'webpack.config.js']);
+
+	fs.writeFileSync('README.md', `# ${name}\r\n\r\n`);
+	fs.appendFileSync('README.md', fs.readFileSync('../configs/README.md'));
+	fs.writeFileSync('README-zh_CN.md', `# ${name}\r\n\r\n`);
+	fs.appendFileSync('README-zh_CN.md', fs.readFileSync('../configs/README-zh_CN.md'));
 };
 
 module.exports = init;

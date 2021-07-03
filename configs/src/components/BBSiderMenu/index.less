@@ -1,0 +1,212 @@
+@import '../../../public/css/variable.less';
+@import '../../../public/css/yifang.less';
+
+@ease-in-out-circ: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+
+:global {
+	.bb-menu-icon {
+		font-size: 18px;
+		display: block;
+		float: left;
+		width: 50px;
+	}
+	.ant-menu-inline-collapsed-tooltip .bb-menu-icon {
+		display: none;
+	}
+}
+
+.logo {
+	height: 64px;
+	position: relative;
+	line-height: 64px;
+	text-align: left;
+	margin-left: 36px;
+	transition: all 0.3s;
+	overflow: hidden;
+	border-bottom: 1px solid #fff;
+	img {
+		display: inline-block;
+		vertical-align: middle;
+		height: 36px;
+	}
+	h1 {
+		color: white;
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 20px;
+		margin: 0 0 0 12px;
+		font-family: 'Myriad Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		font-weight: 600;
+	}
+}
+
+.sider {
+	min-height: 100vh;
+	//   box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+	position: relative;
+	z-index: 10;
+	padding-top: 131px;
+	//   background-image: linear-gradient(0deg, @sider-background-color 0%, #FF6A13 100%) !important;
+	//   border-radius: 0 50px 0 0;
+	:global {
+		.ant-layout-sider-children {
+			margin-top: -42px;
+			padding-top: 0;
+			height: ~'calc(100% - 88px)';
+			border-radius: 0 50px 0 0;
+		}
+		.ant-menu-root {
+			margin-top: 0 !important;
+			height: calc(100vh - 90px);
+			overflow-y: auto;
+		}
+		.ant-menu-inline,
+		.ant-menu-vertical,
+		.ant-menu-vertical-left {
+			border-right: 0;
+		}
+		.ant-menu {
+			background: none;
+			width: 236px;
+			margin-left: 10px;
+			// .ant-menu-item {
+			//     height: 56px;
+			//     line-height: 56px;
+			// }
+			// .ant-menu-submenu-title {
+			//   height: 56px;
+			//   line-height: 56px;
+			// }
+			.ant-menu-item-selected::after {
+				opacity: 0;
+			}
+			.bb-menu-icon {
+				font-size: 18px;
+				padding: 0 16px 0 8px;
+				display: block;
+				float: left;
+			}
+			.ant-menu-sub {
+				width: auto;
+				margin-right: 1px;
+			}
+		}
+
+		.ant-menu-inline-collapsed {
+			width: 100%;
+			margin-left: 0;
+			.bb-menu-icon {
+				padding: 0;
+				margin: 0;
+			}
+			.ant-menu-item-selected {
+				border-radius: 28px;
+			}
+			// .ant-menu-submenu-title {
+			//   padding: 0 !important;
+			//   width: 28px;
+			// }
+			.ant-menu-submenu-selected {
+				border-radius: 28px;
+			}
+
+			.iconContainer {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+
+		.ant-menu-inline-collapsed > .ant-menu-item,
+		.ant-menu-inline-collapsed > .ant-menu-submenu {
+			margin: 14px 11.5px !important;
+		}
+
+		.ant-menu-inline-collapsed > .ant-menu-item .bb-menu-icon + span,
+		.ant-menu-inline-collapsed
+			> .ant-menu-item-group
+			> .ant-menu-item-group-list
+			> .ant-menu-item
+			.bb-menu-icon
+			+ span,
+		.ant-menu-inline-collapsed
+			> .ant-menu-item-group
+			> .ant-menu-item-group-list
+			> .ant-menu-submenu
+			> .ant-menu-submenu-title
+			.bb-menu-icon
+			+ span,
+		.ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title .bb-menu-icon + span {
+			display: inline-block;
+			max-width: 0;
+			opacity: 0;
+		}
+
+		.ant-menu-submenu-open {
+			.ant-menu-item {
+				padding-left: 28px !important;
+				padding-right: 0;
+			}
+			.ant-menu-item > a,
+			.ant-menu-item > a:hover {
+				padding-left: 6px;
+			}
+			.ant-menu-item-selected > a,
+			.ant-menu-item-selected > a:hover {
+				padding-left: 6px;
+			}
+		}
+
+		.ant-menu-inline-collapsed {
+			.ant-menu-submenu-open {
+				border-radius: 28px;
+			}
+		}
+	}
+}
+
+.icon {
+	width: 14px;
+	margin-right: 10px;
+}
+
+i.trigger {
+	width: 100%;
+	color: #fff;
+	font-size: 20px;
+	line-height: 64px;
+	cursor: pointer;
+	transition: all 0.3s, padding 0s;
+	padding: 0 24px;
+}
+
+.siderMenu {
+	height: calc(100vh - 88px);
+	overflow-y: auto;
+	background: transparent !important;
+	border: none !important;
+	:global {
+		.ant-menu-item {
+			margin: 0 20px;
+			width: calc(~'100% - 39px') !important;
+		}
+		.ant-menu-item-selected {
+			border-bottom: 1px solid #e6fbff;
+			&::after {
+				border: none !important;
+			}
+		}
+	}
+	.menuItem {
+		color: @sider-menu-color;
+		&.collapsed {
+			margin-left: 0;
+		}
+		:global {
+			.bbicon.bb-menu-icon {
+				font-size: 18px;
+				margin: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+window.CRMApi = 'http://crm-api.yifang.dev.curisinsight.com';
+window.footerColumns = [{"rows":[{"type":"link","value":"沪ICP备16013332号","href":"http://www.miit.gov.cn/","style":{}},{"type":"link","code":"common.terms.condition.translate","target":"_blank","href":"https://xdp.basebit.me/home/privacy","style":{}}],"style":{}},{"rows":[{"type":"text","value":"沪公网安备31010502003244号","style":{}},{"type":"copyright","style":{}}],"style":{}}];
+window.footerContainerStyle = { padding: '20px 35%' };
+window.documentTitle = 'XDP 翼数坊';
+window.favicon = 'https://cdn.basebit.me/xdp/favicon.ico';
+window.logo = 'https://cdn.basebit.me/xdp/xdp_logo.svg?1';
+window.background = '/images/loginBG.png';
+window.loginLogo = 'https://cdn.basebit.me/xdp/login_logo.svg?1';
+window.defaultLanguage = 'zh-CN';
