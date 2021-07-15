@@ -4,6 +4,7 @@ const scripts = require('../configs/scripts.json');
 const dependencies = require('../configs/dependencies.json');
 const devDependencies = require('../configs/devDependencies.json');
 const child_process = require('child_process');
+const path = require('path');
 
 const init = function (options) {
 	const { name } = options;
@@ -40,9 +41,9 @@ const writeConfigs = function (options) {
 	child_process.spawnSync('cp', ['../configs/webpack.config.js', 'webpack.config.js']);
 
 	fs.writeFileSync('README.md', `# ${name}\r\n\r\n`);
-	fs.appendFileSync('README.md', fs.readFileSync('../configs/README.md'));
+	fs.appendFileSync('README.md', fs.readFileSync(path.resolve(__dirname, '../configs/README.md')));
 	fs.writeFileSync('README-zh_CN.md', `# ${name}\r\n\r\n`);
-	fs.appendFileSync('README-zh_CN.md', fs.readFileSync('../configs/README-zh_CN.md'));
+	fs.appendFileSync('README-zh_CN.md', fs.readFileSync(path.resolve(__dirname, '../configs/README-zh_CN.md')));
 };
 
 module.exports = init;
