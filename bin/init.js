@@ -32,13 +32,32 @@ const writeConfigs = function (options) {
 	const { name } = options;
 	writePackageJson(options);
 
-	child_process.spawnSync('cp', ['-r', '../configs/src', 'src']);
-	child_process.spawnSync('cp', ['-r', '../configs/public', 'public']);
-	child_process.spawnSync('cp', ['../configs/.babelrc', '.babelrc']);
-	child_process.spawnSync('cp', ['../configs/.gitignore', '.gitignore']);
-	child_process.spawnSync('cp', ['../configs/.prettierignore', '.prettierignore']);
-	child_process.spawnSync('cp', ['../configs/.prettierrc', '.prettierrc']);
-	child_process.spawnSync('cp', ['../configs/webpack.config.js', 'webpack.config.js']);
+	child_process.spawnSync('cp', ['-r', path.resolve(__dirname, '../configs/src'), path.resolve(__dirname, 'src')]);
+	child_process.spawnSync('cp', [
+		'-r',
+		path.resolve(__dirname, '../configs/public'),
+		path.resolve(__dirname, 'public'),
+	]);
+	child_process.spawnSync('cp', [
+		path.resolve(__dirname, '../configs/.babelrc'),
+		path.resolve(__dirname, '.babelrc'),
+	]);
+	child_process.spawnSync('cp', [
+		path.resolve(__dirname, '../configs/.gitignore'),
+		path.resolve(__dirname, '.gitignore'),
+	]);
+	child_process.spawnSync('cp', [
+		path.resolve(__dirname, '../configs/.prettierignore'),
+		path.resolve(__dirname, '.prettierignore'),
+	]);
+	child_process.spawnSync('cp', [
+		path.resolve(__dirname, '../configs/.prettierrc'),
+		path.resolve(__dirname, '.prettierrc'),
+	]);
+	child_process.spawnSync('cp', [
+		path.resolve(__dirname, '../configs/webpack.config.js'),
+		path.resolve(__dirname, 'webpack.config.js'),
+	]);
 
 	fs.writeFileSync('README.md', `# ${name}\r\n\r\n`);
 	fs.appendFileSync('README.md', fs.readFileSync(path.resolve(__dirname, '../configs/README.md')));
